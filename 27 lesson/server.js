@@ -22,7 +22,7 @@ http.createServer(function (req, res) {
                 .on('readable', function () {
 
                     body += req.read();
-                    body = body.match(/{"message":"\s*\S*"}/); // найдёт первый правильный
+                    // body = body.match(/{"message":"\s*\S*"}/); // найдёт первый правильный
                     if (body.length > 1e4) {
                         res.statusCode = 413;
                         res.end('Your message is too big for my little chat');
